@@ -57,6 +57,9 @@ module Crankshaft
       end
     end
 
+    def method_missing(method, *args)
+      self[method]
+    end
 
     # Files
     # -----
