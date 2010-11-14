@@ -11,7 +11,9 @@ module Crankshaft
 
     def initialize(session, attrs = {})
       @session = session
-      @attrs = attrs
+      @attrs = attrs.keys.inject({}) do |hash, key|
+        hash.tap {|h| h[key.to_sym] = attrs[key] }
+      end
     end
 
     # Actions
@@ -54,7 +56,7 @@ module Crankshaft
       response = @session.execute('torrent-get', arguments)
       if response['result'] == 'success'
         attrs = response['arguments']['torrents'][0]
-        return attrs[attribute]
+        return attrs[attribute.to_s]
       end
     end
 
