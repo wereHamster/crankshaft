@@ -47,6 +47,7 @@ module Crankshaft
     # ----------
 
     def [](attribute)
+      attribute = attribute.to_sym
       return @attrs[attribute] if @attrs.include?(attribute)
 
       arguments = { :ids => [ self['id'] ], :fields => [ attribute ] }
