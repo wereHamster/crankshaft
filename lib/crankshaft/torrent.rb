@@ -41,7 +41,7 @@ module Crankshaft
 
     def remove(delete = false)
       arguments = { :ids => [ self['id'] ], 'delete-local-data' => delete }
-      @session.execute('torrent-delete', arguments)
+      @session.execute('torrent-remove', arguments)
     end
 
 
