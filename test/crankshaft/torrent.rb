@@ -1,6 +1,6 @@
 require 'helper'
 
-class TorrentTest < Test::Unit::TestCase
+class Torrent < Test::Unit::TestCase
 
   context "Torrent" do
 
