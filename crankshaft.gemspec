@@ -1,3 +1,4 @@
+require 'bundler'
 require File.expand_path('../lib/crankshaft/version', __FILE__)
 
 Gem::Specification.new do |s|
@@ -12,4 +13,5 @@ Gem::Specification.new do |s|
   s.files        = Dir.glob("lib/**/*") + %w[LICENSE README.md]
 
   s.add_dependency 'json'
+  s.add_development_dependency 'shoulda'
 end
